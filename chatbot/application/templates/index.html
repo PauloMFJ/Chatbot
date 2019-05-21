@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+<!-- Sets -->
+{% set title = "Chatbot" %}
+
+<!-- Body -->
+{% block body %}
+	<div class="chatbox">
+	    <div>
+	        <div class="message-container"></div>
+
+		    <form action="" method="POST">
+				<input type="text" class="to-send" placeholder="Write a message..." />
+				<input type="submit" value="" class="send" />
+			</form>
+		</div>
+	</div>
+{% endblock %}
+
+<!-- Scripts -->
+{% block scripts %}
+	<!-- Get Socket IO JS  -->
+    <script src="{{ url_for('static', filename='assets/scripts/socket.min.js') }}"></script>
+	<!-- Socket IO Message Handling -->
+	<script type="text/javascript">
+		// Create session connection
+		var socket = io.connect('http://' + document.domain + ':' + location.port);
+
+	    socket.on('connect', function() {
+	    	// Get form data on submit
+	        var form = $('form').on('submit', function(e) {
+	        	// Remove submit default actions
+	          	e.preventDefault();
+
+	          	// Get message
+	          	let user_input = $('input.to-send').val();
+
+	    		// If message is not empty emit
+		        if(user_input) {
+		          	socket.emit('message sent', { message: user_input });
+
+		          	// Clear message field and focus
+		          	$('input.to-send').val('').focus();
+		          }
+	        });
+	    });
+
+		// Scroll to bottom of message container
+	    function scroll_to_bottom() {
+			var container = $('.message-container');
+			var height = container[0].scrollHeight;
+			container.scrollTop(height);
+	    }
+
+	    // Append message to container
+	    function append_message(type, json) {
+	    	// JSON.stringify(json.message)
+			$('div.message-container').append('<div class="message ' + type + '"><span>' + json.message + '</span><div class="time">' + json.time_sent + '</div></div>');
+			
+			scroll_to_bottom()
+	    }
+
+	    // Get and display sent messages
+	    socket.on('display sent message', function(json) {
+           	append_message('sent', json)
+	    });
+
+	    // Get and display received messages
+	   	socket.on('display received message', function(json) {
+	        append_message('received', json)
+	    });
+
+	    // Get and display tickets
+	   	socket.on('display ticket', function(json) {
+			$('div.message-container').append('<div class="ticket"><div class="header">' + json.fareProvider + '</div><ul><li><span>' + json.departureStationName + '</span><svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"></path></svg></svg><span>' + json.arrivalStationName + '</span></li><li><span data="Depart at">' + json.departureTime + '</span><span data="Arrive at">' + json.arrivalTime + '</span><span data="Duration">' + json.duration + '</span><span data="Changes">' + json.changes + '</span></li><li><span data="Depart Date">' + json.departDate + '</span><span data="Ticket Price">£' + json.ticketPrice + '</span></li>' + (json.isReturn ? '<li><span data="Return Date">' + json.returnDate + '</span><span>' + json.returnTicketType + '</span></li>' : '') + '</ul></div>');
+			
+			scroll_to_bottom()
+	    });
+	</script>
+{% endblock %}
