@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Title layout block -->
+		<title>{{ title }}</title>
+			
+		<!-- Metadata -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		
+		<!-- Icon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='favicons/apple-touch-icon.png') }}">
+		<link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='favicons/favicon-32x32.png') }}">
+		<link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='favicons/favicon-16x16.png') }}">
+		<link rel="manifest" href="{{ url_for('static', filename='favicons/site.webmanifest') }}">
+		<link rel="mask-icon" href="{{ url_for('static', filename='ffavicons/safari-pinned-tab.svg') }}" color="#2d89ef">
+		<meta name="msapplication-TileColor" content="#2d89ef">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Get CSS -->
+		<link href="{{ url_for('static', filename='assets/styles/normalize.min.css') }}" rel="stylesheet" type="text/css" media="all" />
+		<link href="{{ url_for('static', filename='assets/styles/master.css') }}" rel="stylesheet" type="text/css" media="all" />
+		{% block stylesheets %}{% endblock %}
+	</head>
+	
+	<body class="preload">
+		<main>
+			{% block body %}{% endblock %}
+		</main>
+		
+		<!-- Get JQuery -->
+		<script src="{{ url_for('static', filename='assets/scripts/jquery-3.2.1.min.js') }}"></script>
+		<!-- Get Master JS -->
+		<script src="{{ url_for('static', filename='assets/scripts/master.js') }}"></script>
+		{% block scripts %}{% endblock %}
+	</body>
+</html>
