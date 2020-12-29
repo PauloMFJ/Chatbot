@@ -2,7 +2,7 @@
 
 Python-based intelligent chatbot system to find and book train tickets.
 
-## Components Used
+## Libraries Used
 
 - [Flask](http://flask.pocoo.org/) and [Socket.IO](https://socket.io/) - Using Python for UI.
 - [spaCy](https://spacy.io/) - Natural Language Processing and Understanding (NLPU) component.
