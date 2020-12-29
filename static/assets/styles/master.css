@@ -21,8 +21,8 @@ html, body {
 .preload * {
   -webkit-transition: none !important;
      -moz-transition: none !important;
-	   -o-transition: none !important;
-	      transition: none !important;
+	     -o-transition: none !important;
+	        transition: none !important;
 }
 
 /* Reset */
@@ -43,9 +43,9 @@ html, body {
 /* Transition */
 .transition-2ms {
 	-webkit-transition: all .2s ease-in-out;
-       -moz-transition: all .2s ease-in-out;
+     -moz-transition: all .2s ease-in-out;
 	     -o-transition: all .2s ease-in-out;
-            transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
 }
 
 /* ------------------------------------ Header ------------------------------------ */
@@ -60,24 +60,24 @@ h4 { line-height: 22px; }
 /* ------------------------------------ Body ------------------------------------ */
 /* --- Chatbox --- */
 @-webkit-keyframes gradient {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 @-moz-keyframes gradient {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 @-o-keyframes gradient {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 @keyframes gradient {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 main {
 	position: relative;
@@ -109,10 +109,10 @@ main {
 }
 .chatbox > div > .message-container::-webkit-scrollbar {
 	-webkit-transition: all .4s ease-in-out;
-       -moz-transition: all .4s ease-in-out;
+     -moz-transition: all .4s ease-in-out;
 	     -o-transition: all .4s ease-in-out;
-            transition: all .4s ease-in-out;
-   	width: 4px;
+          transition: all .4s ease-in-out;
+  width: 4px;
 	height: 1px;
 	z-index: 2;
 }
@@ -148,14 +148,14 @@ main {
 .message:after {
 	position: absolute;
 	content: "";
-    display: block;
-    top: calc(50% - 4px);
-    width: 10px;
-    height: 8px;
-    -webkit-transform: rotate(29deg) skew(-35deg);
-       -moz-transform: rotate(29deg) skew(-35deg);
-	     -o-transform: rotate(29deg) skew(-35deg);
-            transform: rotate(29deg) skew(-35deg);
+  display: block;
+  top: calc(50% - 4px);
+  width: 10px;
+  height: 8px;
+  -webkit-transform: rotate(29deg) skew(-35deg);
+      -moz-transform: rotate(29deg) skew(-35deg);
+        -o-transform: rotate(29deg) skew(-35deg);
+          transform: rotate(29deg) skew(-35deg);
 }
 .message.received:after {
 	background-color: #eee;
@@ -178,33 +178,33 @@ main {
 /* --- Inputs --- */
 .chatbox > div > form {
 	position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #eee;
-    border-radius: 8px;
-    overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  background-color: #eee;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .chatbox > div > form > .to-send {
-    width: 100%;
-    height: 100%;
-    padding: 12px 42px 12px 12px;
-    border: 0;
-    outline: none;
-    background-color: inherit;
+  width: 100%;
+  height: 100%;
+  padding: 12px 42px 12px 12px;
+  border: 0;
+  outline: none;
+  background-color: inherit;
 }
 
 .chatbox > div > form .send {
 	position: absolute;
 	top: 5px;
-	right: 5px;
-    width: 32px;
-    height: 32px;
-    border: none;
+  right: 5px;
+  width: 32px;
+  height: 32px;
+  border: none;
 	background-color: inherit;
 	cursor: pointer;
-    background-image: url('/static/assets/images/send.svg');
-    background-repeat: no-repeat;
-    background-position: center;
+  background-image: url('/static/assets/images/send.svg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* --- Tickets --- */
