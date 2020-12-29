@@ -1,12 +1,9 @@
-from experta  import *
+from experta import *
 from experta.watchers import RULES, AGENDA
 import dateutil.parser
 from datetime import datetime
 
 from web_scrape import Ticket
-
-#from experta.watchers import AGENDA, RULES, ACTIVATIONS
-#watchers.watch('FACTS')
 
 class Booking(KnowledgeEngine):
     @DefFacts()
