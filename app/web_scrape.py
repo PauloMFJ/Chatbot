@@ -1,6 +1,6 @@
 import requests, json
 from bs4 import BeautifulSoup
-from __main__ import custom_to_date
+from app import custom_to_date
 
 class Ticket(object):
     url = str()

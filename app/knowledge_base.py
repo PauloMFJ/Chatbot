@@ -1,11 +1,11 @@
-from pyknow import *
-from pyknow.watchers import RULES, AGENDA
+from experta  import *
+from experta.watchers import RULES, AGENDA
 import dateutil.parser
 from datetime import datetime
 
 from web_scrape import Ticket
 
-#from pyknow.watchers import AGENDA, RULES, ACTIVATIONS
+#from experta.watchers import AGENDA, RULES, ACTIVATIONS
 #watchers.watch('FACTS')
 
 class Booking(KnowledgeEngine):
@@ -90,7 +90,7 @@ class Booking(KnowledgeEngine):
                 self.knowledge['question'] = 'ask_name'
             Message.emit_feedback('display received message', 'ask_name')
 
-    # Ask sERVICE
+    # Ask Service
     @Rule(Fact(service = 'chat'),
         Fact(name = MATCH.name),
         salience = 98)
@@ -395,6 +395,7 @@ class Booking(KnowledgeEngine):
         Fact(informationGiven = False),
         salience = 84)
     def predict_delay(self):
+        # To Do: Add Train Delay Prediction Component
         Message.emit_feedback('display received message', 'prediction_error')
         self.knowledge['informationGiven'] = True
         self.declare(Fact(whatsNext = True))
@@ -422,4 +423,4 @@ def process_entities(entities):
     engine.run()
 
 # Import Message
-from __main__ import Message, to_date
+from app import Message, to_date

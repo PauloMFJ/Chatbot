@@ -104,4 +104,4 @@ def get_entities(json):
 	print(results)
 	return results
 
-from __main__ import Message
+from app import Message
