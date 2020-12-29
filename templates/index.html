@@ -56,7 +56,6 @@
   function append_message(type, json) {
     // JSON.stringify(json.message)
     $('div.message-container').append('<div class="message ' + type + '"><span>' + json.message + '</span><div class="time">' + json.time_sent + '</div></div>');
-
     scroll_to_bottom()
   }
 
