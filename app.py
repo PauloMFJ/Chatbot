@@ -11,7 +11,7 @@ socketio = SocketIO(app)
 
 # Method to read data from JSON file
 def load_json_file(filename):
-    with app.open_resource('static/assets/configuration/' + filename + '.json') as f:
+    with app.open_resource('app/static/assets/configuration/' + filename + '.json') as f:
         return json.load(f)
 
 class Message(object):
