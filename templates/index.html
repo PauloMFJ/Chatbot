@@ -17,8 +17,9 @@
 {% endblock %}
 <!-- Scripts -->
 {% block scripts %}
-<!-- Get Socket IO JS  -->
-<script src="{{ url_for('static', filename='assets/scripts/socket.min.js') }}">
+<!-- Socket IO -->
+<script crossorigin="anonymous"
+        src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js">
 </script>
 
 <!-- Socket IO Message Handling -->
