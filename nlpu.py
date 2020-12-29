@@ -1,9 +1,9 @@
-import spacy, re, json, dateutil.parser
+import spacy, re, json, dateutil.parser, en_core_web_sm
 from spacy.lang.en import English as english
 from itertools import tee, islice, chain
 
 parser = english()
-nlp = spacy.load('en_core_web_sm')#lg
+nlp = en_core_web_sm.load()
 
 # Regular Expressions
 greeting = re.compile(r'\b(?i)(hello|hey|hi|yo)\b')
