@@ -70,8 +70,8 @@ def custom_to_date(string, type_format):
     return str(datetime.strftime(get_strptime(string), type_format))
 
 # Render Index
-@app.route('/', methods=['GET', 'POST'])
-@app.route('/chatbot', methods=['GET', 'POST'])
+@app.route('/')
+@app.route('/chatbot')
 def index():
 	return render_template('/index.html')
 
