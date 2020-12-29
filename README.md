@@ -14,8 +14,8 @@ Additionally used HTML, CSS, JavaScript, [JQuery](https://jquery.com/) and JSON.
 ## Build Setup
 
 ``` bash
-# Create virtualenv
-virtualenv venv
+# Create virtual environment
+python -m venv venv/
 ./venv/scripts/activate
 
 # Install dependencies
