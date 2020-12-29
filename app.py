@@ -1,10 +1,12 @@
 from flask import Flask, render_template, redirect, url_for, json
 from flask_socketio import SocketIO
+import config
 import random
 from datetime import datetime
 
 # Setup socketio
 app = Flask(__name__)
+app.config.from_object(config.ProductionConfig())
 socketio = SocketIO(app)
 
 # Method to read data from JSON file
