@@ -82,7 +82,7 @@ h4 { line-height: 22px; }
 main {
 	position: relative;
 	height: 100%;
-	padding: 8% 0;
+	padding: 8% 16px;
 	background: linear-gradient(135deg, #ffa5a1, #c5afff, #92d8ff);
 	background-size: 200% 100%;
 	-webkit-animation: gradient 30s ease infinite;
