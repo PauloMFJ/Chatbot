@@ -51,7 +51,7 @@
     "What date would you like to depart?"
   ],
   "ask_depart_time": [
-    "What time would you like to leave at? (In format 00:00 till we fix AM/PM!)"
+    "What time would you like to leave at? (As 00:00 till we fix other formats!)"
   ],
 
   "ask_is_return": [
@@ -63,7 +63,7 @@
     "What date would you like to return?"
   ],
   "ask_return_time": [
-    "What time would you like to return at? (In format 00:00 till we fix AM/PM!)"
+    "What time would you like to return at? (As 00:00 till we fix other formats!)"
   ],
 
   "ticket_found_single": [
@@ -103,10 +103,10 @@
     "What are the origin and the destination locations of the train you would like to see the predicted arrival time for?"
   ],
   "ask_predict_depart_time": [
-    "What was the original estimated depart time? (In format 00:00 till we fix AM/PM!)"
+    "What was the original estimated depart time? (As 00:00 till we fix other formats!)"
   ],
   "ask_predict_return_time": [
-    "What was the orginal estimated arrival time? (In format 00:00 till we fix AM/PM!)"
+    "What was the orginal estimated arrival time? (As 00:00 till we fix other formats!)"
   ],
   "ask_predict_delay": [
     "How long of a delay has there been on the train?"
