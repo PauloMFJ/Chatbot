@@ -21,10 +21,14 @@ python -m venv venv/
 # Install dependencies
 pip install -r requirements.txt
 
-# Run app
+# Run app (through server)
 python app.py
 
-# Install new dependency
+# Run app (locally)
+$env:FLASK_APP = "chatbot/app.py"
+python -m flask run
+
+# Install new dependency (Warning: freeze updates how en_core_web_sm is imported, keep current format if updated)
 python -m pip install ...
 python -m pip freeze > requirements.txt
 
