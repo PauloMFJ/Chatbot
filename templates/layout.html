@@ -25,10 +25,14 @@
         type="image/png" />
   <link href="{{ url_for('static', filename='favicons/site.webmanifest') }}"
         rel="manifest" />
-  <link color="#2d89ef"
+  <link color="#ff82c1"
         href="{{ url_for('static', filename='favicons/safari-pinned-tab.svg') }}"
         rel="mask-icon" />
-  <meta content="#2d89ef" name="msapplication-TileColor" />
+  <link href="{{ url_for('static', filename='favicons/favicon.ico') }}"
+        rel="shortcut icon" />
+  <meta content="#ff82c1" name="msapplication-TileColor" />
+  <meta content="{{ url_for('static', filename='favicons/browserconfig.xml') }}"
+        name="msapplication-config" />
   <meta content="#ffffff" name="theme-color" />
 
   <!-- Get CSS -->
