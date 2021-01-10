@@ -83,7 +83,7 @@ main {
 	position: relative;
 	height: 100%;
 	padding: 8% 16px;
-	background: linear-gradient(135deg, #fff, #FF82C1);
+	background: linear-gradient(135deg, #ffa5a1, #c5afff, #92d8ff);
 	background-size: 200% 100%;
 	-webkit-animation: gradient 30s ease infinite;
 	   -moz-animation: gradient 30s ease infinite;

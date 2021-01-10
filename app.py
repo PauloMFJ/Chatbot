@@ -6,7 +6,7 @@ from datetime import datetime
 
 # Setup socketio
 app = Flask(__name__)
-app.config.from_object(config.ProductionConfig())
+app.config.from_object(config.DevelopmentConfig())
 socketio = SocketIO(app)
 
 # Method to read data from JSON file
